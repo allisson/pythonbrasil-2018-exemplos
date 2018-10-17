@@ -1,0 +1,2 @@
+simple-rest-client==0.5.3
+python-status==1.0.1
