@@ -6,14 +6,14 @@ api = API()
 
 def get_people():
     for page in range(1, 10):
-        people = api.people(page=page)
-        for p in people['results']:
+        response = api.people(page=page)
+        for p in response['results']:
             print(p['name'])
 
 
 def get_luke():
-    luke = api.people_detail(1)
-    print(luke)
+    response = api.people_detail(1)
+    print(response)
 
 
 def get_404():
