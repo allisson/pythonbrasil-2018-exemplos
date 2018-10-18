@@ -7,14 +7,14 @@ api = get_api_instance()
 
 def get_people():
     for page in range(1, 10):
-        people = api.people.list(params={'page': page})
-        for p in people.body['results']:
+        response = api.people.list(params={'page': page})
+        for p in response.body['results']:
             print(p['name'])
 
 
 def get_luke():
-    luke = api.people.retrieve(1)
-    print(luke.body)
+    response = api.people.retrieve(1)
+    print(response.body)
 
 
 def get_404():

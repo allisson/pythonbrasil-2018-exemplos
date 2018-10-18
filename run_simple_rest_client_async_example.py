@@ -8,8 +8,8 @@ api = get_async_api_instance()
 
 
 async def _get_people(page):
-    people = await api.people.list(params={'page': page})
-    for p in people.body['results']:
+    response = await api.people.list(params={'page': page})
+    for p in response.body['results']:
         print(p['name'])
 
 
@@ -19,8 +19,8 @@ async def get_people():
 
 
 async def get_luke():
-    luke = await api.people.retrieve(1)
-    print(luke.body)
+    response = await api.people.retrieve(1)
+    print(response.body)
 
 
 async def get_404():
