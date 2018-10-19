@@ -6,8 +6,8 @@ import aiohttp
 async def get_people(session):
     url = 'https://swapi.co/api/people/'
     async with session.get(url) as response:
-        people = await response.json()
-        for person in people['results']:
+        response_data = await response.json()
+        for person in response_data['results']:
             print(person['name'])
 
 
